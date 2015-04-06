@@ -5,10 +5,11 @@ Fundamentals of Digital Image and Video Processing
 by Aggelos K. Katsaggelos
 
 I am not a developer, I made this only for fun. After searching I found that the most interesting libraries to use will be NumPy and SciPy.
-Here is an interesting link to begin:
+Here are some interesting links to begin:
 
 http://scipy-lectures.github.io/advanced/image_processing/
-
+https://atoms.scilab.org/categories/image_processing
+http://scikit-image.org/
 
 ##Installation
 
