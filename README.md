@@ -10,8 +10,8 @@ Here is an interesting link to begin:
 http://scipy-lectures.github.io/advanced/image_processing/
 
 
-Installation:
------------------------------
+##Installation
+
 ### Arch Linux
 Archlinux up to date + Python 2.7.9 + Python2 Scipy + Python2 PIL + Python2 NumPy + IPython2
 
