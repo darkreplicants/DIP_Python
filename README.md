@@ -11,10 +11,16 @@ http://scipy-lectures.github.io/advanced/image_processing/
 
 
 Archlinux installation Notes:
---------------------------------
-
+-----------------------------
+### Arch Linux
 Archlinux up to date + Python 2.7.9 + Python2 Scipy + Python2 PIL + Python2 NumPy + IPython2
 
-sudo pacman -S python2-scipy python2-pillow python2-matplotlib python2-numpy
+```sh
+$sudo pacman -S python2-scipy python2-pillow python2-matplotlib python2-numpy
+```
 
+### Debian / Ubuntu / Mint
+```sh
+$sudo apt-get install python python-scipy python-pil python-matplotlib python-numpy
+```
 
