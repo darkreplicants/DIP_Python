@@ -60,7 +60,7 @@ def plot(data, title):
     plt.title(title)
 
 # Usig the original to get the same results
-im = Image.open('lena.gif')
+im = Image.open('../images/lena.gif')
 
 # image converted to double with max value of 1
 data = np.array(im)/255.0
