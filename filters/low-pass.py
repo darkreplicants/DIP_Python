@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: UTF-8 -*-
 
 # Week 2 from "Fundamentals of Digital Image and Video Processing"
 #
@@ -61,23 +62,38 @@ def plot(data, title):
 # Usig the original to get the same results
 im = Image.open('lena.gif')
 
-# as requested, image as double with max value of 1
-data = np.array(im, dtype=float)/255
+# image converted to double with max value of 1
+data = np.array(im)/255.0
 plot.i = 0
 plot(data, 'Original')
 
-k3 = np.ones((3,3))/9
-k5 = np.ones((5,5))/25
+# Create the filters
+k3 = np.ones((3,3))/9.0
+k5 = np.ones((5,5))/25.0
 
-lp3 = ndimage.convolve(data, k3)
-lp5 = ndimage.convolve(data, k5)
+# Now the convolution
+lp3 = ndimage.convolve(data, k3, mode='nearest')
+lp5 = ndimage.convolve(data, k5, mode='nearest')
+
+mse3 = np.sum(np.power(lp3-data,2))/np.size(data)
+mse5 = np.sum(np.power(lp5-data,2))/np.size(data)
+
+#~ PSNR = 10*np.log10(np.power(MAXi,2)/MSE);
+psnr3 = 10*np.log10(np.power(1.0,2)/mse3);
+psnr5 = 10*np.log10(np.power(1.0,2)/mse5);
+
+print psnr3, psnr5
 
 plot(lp3, '3x3 low-pass')
 plot(lp5, '5x5 low-pass')
 plt.show()
 
-# So far, I'm getting the *same* visual result, but lp3 and lp5 are not
-# the same as matlab did
-
-# TODO: Compute PSNR value
-# Matlab: psnr(lenaLpf3x3,lenaScaled,1)
+# other posible modes for borders:
+# reflect:  29.2951 25.7315
+# constant: 28.3131 24.9244 with cval=0
+# nearest:  29.2951 25.7335
+# mirror:   29.2872 25.7261
+# wrap:     28.8001 25.3345
+#
+# Answer from matlab:  29.2951 25.7335
+# *nearest* is the exact replacement and *reflect* is very close
