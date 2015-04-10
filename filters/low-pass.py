@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 # -*- coding: UTF-8 -*-
 
 # Week 2 from "Fundamentals of Digital Image and Video Processing"
@@ -50,7 +50,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.ndimage as ndimage
-import Image
+from scipy import misc
 
 def plot(data, title):
     plot.i += 1
@@ -60,7 +60,7 @@ def plot(data, title):
     plt.title(title)
 
 # Usig the original to get the same results
-im = Image.open('../images/lena.gif')
+im = misc.imread('../images/lena.gif')
 
 # image converted to double with max value of 1
 data = np.array(im)/255.0
