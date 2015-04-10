@@ -13,9 +13,10 @@ Here are some interesting links to begin:
 
 ##List of Scripts
 
-- readImage.py 
-- displayImage.py
-- basicManipulation.py
+- basics/readImage.py 
+- basics/displayImage.py
+- basics/basicManipulation.py
+- filters/low-pass.py
 
 
 ##Installation
