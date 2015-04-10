@@ -59,10 +59,10 @@ def plot(data, title):
     plt.gray()
     plt.title(title)
 
-# Usig the original to get the same results
+# Using the original to get the same results
 im = misc.imread('../images/lena.gif')
 
-# image converted to double with max value of 1
+# Image converted to double with max value of 1
 data = np.array(im)/255.0
 plot.i = 0
 plot(data, 'Original')
@@ -78,7 +78,11 @@ lp5 = ndimage.convolve(data, k5, mode='nearest')
 mse3 = np.sum(np.power(lp3-data,2))/np.size(data)
 mse5 = np.sum(np.power(lp5-data,2))/np.size(data)
 
-#~ PSNR = 10*np.log10(np.power(MAXi,2)/MSE);
+# PSNR = 10*np.log10(np.power(MAXi,2)/MSE);
+# MAXI is the maximum possible pixel value of the image. 
+# because of image is converted to double and pixel value
+# is  map value to 0 - 1 MAXI is equal to 1
+
 psnr3 = 10*np.log10(np.power(1.0,2)/mse3);
 psnr5 = 10*np.log10(np.power(1.0,2)/mse5);
 
