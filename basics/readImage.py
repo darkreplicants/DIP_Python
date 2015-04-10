@@ -9,7 +9,7 @@ from scipy import misc
 import matplotlib.pyplot as plt
 
 # Read image from file
-linuximage = misc.imread('linux.png')
+linuximage = misc.imread('../images/linux.png')
 
 # Display on CMD some image properties
 print "Image type: ", type(linuximage)
