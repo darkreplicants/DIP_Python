@@ -10,6 +10,12 @@ Here is an interesting link to begin:
 http://scipy-lectures.github.io/advanced/image_processing/
 
 
+List of scripts:
+------------------
+
+- readImage.py 
+- displayImage.py
+
 Archlinux installation Notes:
 --------------------------------
 
