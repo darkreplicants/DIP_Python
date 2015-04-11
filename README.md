@@ -18,6 +18,8 @@ Here are some interesting links to begin:
 - basics/basicManipulation.py   Basic pixel manipulation
 - basics/infoImage.py           Shows image statistics and plots histogram
 - basics/colorImage.py          Extract RGB image channels and displays them
+- basics/denoiseImage.py	Add noise to Lena image and remove it with predefined Gaussian and Median filters
+- basics/geometricTrans.py	Basic geometrical transformations
 - filters/low-pass.py		Resolution of problem 7 assigment 1
 
 
