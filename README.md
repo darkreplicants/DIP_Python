@@ -13,10 +13,12 @@ Here are some interesting links to begin:
 
 ##List of Scripts
 
-- basics/readImage.py 
-- basics/displayImage.py
-- basics/basicManipulation.py
-- filters/low-pass.py
+- basics/readImage.py           Reads image from a file and displays it on screen
+- basics/displayImage.py        Displays an image and save it to a file
+- basics/basicManipulation.py   Basic pixel manipulation
+- basics/infoImage.py           Shows image statistics and plots histogram
+- basics/colorImage.py          Extract RGB image channels and displays them
+- filters/low-pass.py		Resolution of problem 7 assigment 1
 
 
 ##Installation
