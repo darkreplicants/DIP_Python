@@ -29,7 +29,6 @@ Here are some interesting links to begin:
 - filters/low-pass.py		Resolution of problem 7 assigment 1
 - filters/rescale.py            Resolution of problem 8 assigment 2, PSNR not equal that got in Matlab!
 - filters/low-pass.py		Resolution of problem 7 assigment 1
->>>>>>> 812b8882611fd412ab359eb90ab7705264523a35
 
 
 ##Installation
