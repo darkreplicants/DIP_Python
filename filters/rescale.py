@@ -48,12 +48,37 @@ for nRows in range(0,179):
 
 
 # Display both images to compare
-plot(resizeImage, 'Down Sampled')
+#plot(resizeImage, 'Down Sampled')
 plot(resizeImageF, 'Down Sampled LPF')
 
+# Up Sampling image
+#
+
+# Create a zero matrix
+bigImage=np.zeros(shape=(359,479))
+
+# For every odd-valued X and odd-valued Y, set the value of 
+# the newly created array at equal to the value of the low-resolution image 
+
+for nRows in range(0,179):
+    for nColumns in range(0,239):
+        bigImage[2*nRows+1,2*nColumns+1]=resizeImageF[nRows,nColumns];
+
+# Define filter
+filterBig = np.zeros(shape=(3,3))
+filterBig =[[0.25,0.5,0.25],[0.5,1,0.5],[0.25,0.5,0.25]]
+
+# Apply filter to rescaled image
+IfilteredBig= ndimage.convolve(bigImage, filterBig)
+misc.imsave('../images/building-rescaled.jpg', IfilteredBig)
 
 
-mse3 = np.sum(np.power(imFiltered-imMapped,2))/np.size(imMapped)
+# Concatenate Matrix to compare original image with new up sampling image
+plot(IfilteredBig, 'Up Sampled Filter')
+
+
+
+mse3 = np.sum(np.power(imMapped-IfilteredBig,2))/np.size(imMapped)
 
 # PSNR = 10*np.log10(np.power(MAXi,2)/MSE);
 # MAXI is the maximum possible pixel value of the image. 
