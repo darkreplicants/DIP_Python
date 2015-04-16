@@ -31,22 +31,27 @@ imFiltered = ndimage.convolve(imMapped, lpf3, mode='nearest')
 # Down Sampling image
 #
 
-# Helper variables to make down sampling
+# Define 2 Numpy matrix for down sampled image
+# and downsampled lpf image
+resizeImage = np.zeros(shape=(179,239))
+resizeImageF = np.zeros(shape=(179,239))
+
+# Down sampling
 for nRows in range(0,179):
-    evenRows[nRows]=2*nRows+1
+    for nColumns in range(0,239):
+        # Down Sampling original image
+        resizeImage[nRows,nColumns]=imMapped[2*nRows+1,2*nColumns+1]
 
-for nColumns in range(0,239):
-    evenColumns[evenColumns]=2*nColumns+1
+        # Down Sampling LPFiltered image
+        resizeImageF[nRows,nColumns]=imFiltered[2*nRows+1,2*nColumns+1]
 
-# Down Sampling original image
-resizeImage=imMapped(evenRows,evenColumns)
 
-# Down Sampling LPFiltered image
-resizeImageF=imfiltered(evenRows,evenColumns)
 
 # Display both images to compare
 plot(resizeImage, 'Down Sampled')
 plot(resizeImageF, 'Down Sampled LPF')
+
+
 
 mse3 = np.sum(np.power(imFiltered-imMapped,2))/np.size(imMapped)
 
